@@ -25,22 +25,21 @@ winner = null
 render()
 }
 
+init()
 function render(){
-board.forEach(index => {
-    if (board.index === 1) {
+board.forEach(function(element, index){
+    if (element === 1) {
       squareEls[index].textContent="X"
-    } else if (board.index === -1){
+    } else if (element === -1){
       squareEls[index].textContent="O"
     }
   })
-
-if (winner === null){
-  turn = turn *  1 ? 1 : -1
-  messageEl.textContent = `It's ${turn}'s turn`
-}else if(winner === T){
-  messageEl.textContent = `Game is a tie`
-}else if (winner === turn){
-  messageEl.textContent = `Congrats ${turn} has won`
-}
+  if (winner === null){
+    messageEl.textContent = `its ${turn === 1 ? 'X' : 'O' }'s turn`
+  }else if(winner === T){
+    messageEl.textContent= `Game is a tie`
+  }else if (winner === turn){
+    messageEl.textContent = `Congrats ${turn} you won`
+  }
 }
 
