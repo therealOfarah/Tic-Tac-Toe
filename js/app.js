@@ -23,7 +23,7 @@ const arrayOfSquareEls = Array.from(squareEls)
 const messageEl =document.querySelector("#message")
 
 /*----------------------------- Event Listeners -----------------------------*/
-
+gameBoard.addEventListener('click', handleClick)
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -58,4 +58,4 @@ function handleClick(evt){
   turn = turn * -1
   render()
 }
-gameBoard.addEventListener('click', handleClick)
+
