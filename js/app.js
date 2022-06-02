@@ -17,7 +17,7 @@ let winner=''
 
 
 /*------------------------ Cached Element References ------------------------*/
-const game = document.querySelector('.board')
+const gameBoard = document.querySelector('.board')
 const squareEls =document.querySelectorAll('.square')
 const arrayOfSquareEls = Array.from(squareEls)
 const messageEl =document.querySelector("#message")
@@ -52,3 +52,10 @@ board.forEach(function(element, index){
   }
 }
 
+function handleClick(evt){
+  let sqIdx = evt.target.id.substring(2)
+  board[sqIdx] = turn
+  turn = turn * -1
+  render()
+}
+gameBoard.addEventListener('click', handleClick)
