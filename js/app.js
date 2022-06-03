@@ -7,7 +7,8 @@ const winningCombos = [
   [1, 4, 7],
   [2, 5, 8],
   [0, 4, 8],
-  [2, 4, 6]
+  [2, 4, 6],
+
 ]
 
 /*---------------------------- Variables (state) ----------------------------*/
@@ -41,6 +42,8 @@ board.forEach(function(element, index){
       squareEls[index].textContent="X"
     } else if (element === -1){
       squareEls[index].textContent="O"
+    }else if(element === null){
+      squareEls[index].textContent=""
     }
   })
   if (winner === null){
@@ -48,8 +51,9 @@ board.forEach(function(element, index){
   }else if(winner === "T"){
     messageEl.textContent= `Game is a tie`
   }else if (winner === turn){
-    messageEl.textContent = `Congrats ${turn} you won`
+    messageEl.textContent = `Congrats ${turn === 1 ? 'X' : 'O' } you won`
   }
+  
 }
 render()
 
@@ -75,8 +79,8 @@ function getWinner() {
       } else if (board.includes(null) === false) {
           return 'T'
       }
-      return null
   }
+  return null
 }
   
 
