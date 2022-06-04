@@ -39,19 +39,19 @@ init()
 function render(){
 board.forEach(function(element, index){
     if (element === 1) {
-      squareEls[index].textContent="X"
+      squareEls[index].textContent="🐱"
     } else if (element === -1){
-      squareEls[index].textContent="O"
+      squareEls[index].textContent="🐶"
     }else if(element === null){
       squareEls[index].textContent=""
     }
   })
   if (winner === null){
-    messageEl.textContent = `Its ${turn === 1 ? 'X' : 'O' }'s turn`
+    messageEl.textContent = `Its ${turn === 1 ? '🐱' : '🐶' }'s turn`
   }else if(winner === "T"){
     messageEl.textContent= `Game is a tie`
   }else if (winner === turn){
-    messageEl.textContent = `Congrats ${turn === 1 ? 'X' : 'O' } you won`
+    messageEl.textContent = `Congrats ${turn === 1 ? '🐱' : '🐶' } you won`
   }
   
 }
